@@ -1,7 +1,9 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 #script to run Orthofinder on Salicaeae
 
+cd
+git clone https://github.com/CBG-Conservation-Genomics/BotanyWorkshop2024.git
 mkdir Orthofinder
 ln -s /mnt/class_data/ .
 
