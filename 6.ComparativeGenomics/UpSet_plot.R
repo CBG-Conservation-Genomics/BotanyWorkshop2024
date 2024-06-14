@@ -2,8 +2,8 @@
 
 library("UpSetR")
 
-#Set path
-setwd("/Users/sstrickler/Desktop/Basil/genefamilies/")
+#Set path - you will need to adjust this to your system
+setwd("/Users/sstrickler/Desktop/BotanyWorkshop/Orthogroups.GeneCount.tsv")
 
 orthogroups_df<- read.table("Orthogroups.GeneCount.tsv",  header=T, stringsAsFactors = F)
 
