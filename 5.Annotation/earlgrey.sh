@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo /home/exouser/Software/EarlGrey-4.2.4/earlGrey \
-    -g HiC/yahs/output_examples/yahs_pass6_scaffolds_final.fa \
-    -o ./earlGreyOutputs -s populusTrichocarpa -d yes -t 60
+    -g /mnt/class_data/5.Annotation/data/popTri_1ContigShortHiC.fa \
+    -o /mnt/class_data/5.Annotation/earlGreyOutputs -s populusTrichocarpa -d yes -t 60
 
 
