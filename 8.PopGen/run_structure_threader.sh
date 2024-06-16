@@ -11,4 +11,4 @@ mkdir Structure
 cd Structure
 ln -s /mnt/class_data/8.PopGen/* .
 
-structure_threader run -K 5  -i infile -o struture1 -t 5 -st ~/.local/bin/
+structure_threader run -K 5  -i /mnt/class_data/8.PopGen/tgdr675_panel4SNPv3.bed -o struture1 -t 5 -st ~/.local/bin/
