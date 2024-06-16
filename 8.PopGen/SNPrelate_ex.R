@@ -7,16 +7,19 @@ BiocManager::install("SNPRelate")
 library(gdsfmt)
 library(SNPRelate)
 
-setwd("~/Desktop/Erica/")
+#get the file https://drive.google.com/file/d/1-gJrJOy0zqkhIV7e496r4V4V4wkpJKjD/view?usp=drive_link
+#and put on ~/Desktop
+setwd("~/Desktop/Botany2024/")
 
-closefn.gds(genofile)
 
-vcf.fn <- "lansing_seedlings_nominoralleles_nomissing_biallelic_highqual_noindels.recode.vcf"
+
+vcf.fn <- "tgdr675_panel4SNPv3.vcf"
 
 snpgdsVCF2GDS(vcf.fn, "test.gds", method="biallelic.only")
 snpgdsSummary("test.gds")
 
 genofile <- snpgdsOpen("test.gds")
+#closefn.gds(genofile)
 
 # Try different LD thresholds for sensitivity analysis
 snpset <- snpgdsLDpruning(genofile, ld.threshold=0.2, autosome.only=FALSE)
