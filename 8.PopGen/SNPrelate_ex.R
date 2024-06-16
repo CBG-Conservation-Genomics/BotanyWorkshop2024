@@ -43,6 +43,3 @@ head(tab)
 # Draw
 plot(tab$EV2, tab$EV1, xlab="eigenvector 2", ylab="eigenvector 1")
 
-#Fst
-sample.id <- read.gdsn(index.gdsn(genofile, "sample.id"))
-pop_code <- read.gdsn(index.gdsn(genofile, "sample.annot/pop.group"))
