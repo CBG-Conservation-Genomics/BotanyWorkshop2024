@@ -1,0 +1,48 @@
+
+#in your home directory, make a new Botany folder (unless you already have one)
+mkdir Botany
+cd Botany
+
+#################################################
+#########	 Assembly					#########
+#################################################
+
+mkdir Assembly
+cd Assembly
+cp /mnt/class_data/4.Assembly/HiFi/gfa_to_fasta.sh .
+cp /mnt/class_data/4.Assembly/HiFi/HiFiasm.sh .
+cp /mnt/class_data/4.Assembly/HiC/yahs/contig_stats.sh .
+cp /mnt/class_data/4.Assembly/HiC/yahs/yahs.sh .
+
+
+#- Run HiFi assembly script, either launch the script (first lines are commented out) or open it in a text editor and copy paste
+
+#- once the assembly is done, we need to run the gfa_to_fasta script to conver to fasta format
+
+#################################################
+#########	 Scaffolding	  			#########
+#################################################
+
+#Scaffolding, particularly mapping HiC data to the assembled genome can take a long time. So we are going to use premapped files to expedite that process
+
+cp /mnt/class_data/4.Assembly/HiC/yahs/Populus_trichocarpa_HiFi.primary_contigs.fasta .
+/home/exouser/Software/samtools-1.19.2/samtools faidx Populus_trichocarpa_HiFi.primary_contigs.fasta
+
+
+#- instead of Launching the yas.sh script; let's look at the script since this  part can take a while hours to run
+
+#- the actual running of yahs (with the sorted bams done) is fast. We'll run three different cases
+#- run contig_stats.sh and let's look at the scaffolds
+
+
+#################################################
+#########	 SNP calling	  			#########
+#################################################
+
+cp /mnt/class_data/7.SNPCalling/genome_SNP_calling/BWA_and_Haplotype_class_project_SpechtLab.sh .
+cp /mnt/class_data/7.SNPCalling/genome_SNP_calling/reference_genome/Make_dictionary.sh .
+cp /mnt/class_data/7.SNPCalling/genome_SNP_calling/Combine_gvcfs_and_genotype.sh .
+cp /mnt/class_data/7.SNPCalling/genome_SNP_calling/VCFtools_Populus_filtering.sh .
+cp /mnt/class_data/7.SNPCalling/genome_SNP_calling/report_heterozygosity.sh .
+
+#- launch the BWA_and_Haplotype_class_project_SpechtLab.sh, then we'll walk thru what is going on
