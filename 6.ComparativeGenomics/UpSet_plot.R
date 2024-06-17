@@ -1,9 +1,11 @@
 #An R script for plotting gene families created by OrthoFinder
-
+install.packages("UpSetR")
 library("UpSetR")
 
+#download: https://drive.google.com/file/d/12epchjj24HyPweuCIYNMwzXHOhrngEtt/view?usp=drive_link
+
 #Set path - you will need to adjust this to your system
-setwd("/Users/sstrickler/Desktop/BotanyWorkshop/Orthogroups.GeneCount.tsv")
+setwd("/Users/sstrickler/Desktop/BotanyWorkshop/")
 
 orthogroups_df<- read.table("Orthogroups.GeneCount.tsv",  header=T, stringsAsFactors = F)
 
